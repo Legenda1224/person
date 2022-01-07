@@ -91,5 +91,14 @@ function onEntry(entry) {
   
   }
 
+  let options5 = {
+    threshold: [0.2] };
+  let observer5 = new IntersectionObserver(onEntry, options5);
+  let elements5 = document.querySelectorAll('.scroll5');
+  
+  for (let elm of elements5) {
+    observer5.observe(elm);
+  
+  }
 
 
