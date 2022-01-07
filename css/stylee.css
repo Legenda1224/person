@@ -9,86 +9,74 @@ body{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-
-
 .scroll2{
+    transition: all 1.6s;
     opacity: 0;
     transform: translatey(40%);
 }
 
 .scroll2.element-show{
+    transition-delay: 0.4s;
+    opacity: 1;
+    transform: translatex(0%);
+}
+
+.scroll5{
+    transition: all 1.6s;
+    opacity: 0;
+    transform: translatey(40%);
+}
+
+.scroll5.element-show{
+    transition-delay: 0.5s;
+    opacity: 1;
+    transform: translatex(0%);
+}
+
+.scroll3{
+    opacity: 0;
+    transform: translatey(40%);
+}
+
+.scroll3.element-show{
     opacity: 1;
     transition: all 1.6s;
     transform: translatex(0%);
 }
 
-
-.scroll3{
-    opacity: 0;
-    transform: translatex(-60%);
-}
-
-.scroll3.element-show{
-    opacity: 1;
-    transition: all 1.5s;
-    transform: translatex(0%);
-}
-
-
 .scroll4{
+    transition: all 1.6s;
     opacity: 0;
-    transform: translatex(60%);
+    transform: translatey(40%);
 }
 
 .scroll4.element-show{
+    transition-delay: 0.8s;
     opacity: 1;
-    transition: all 1.5s;
     transform: translatex(0%);
 }
-
 
 /*strelka*/
 
 .strelka{
     position: fixed;
     z-index: 40;
-    right: 25px;
-    bottom: 30px;
+    right: 10px;
+    bottom: 20px;
     background: #2F89DC;
     width: 35px;
     height: 35px;
-    border-radius: 20px;
     transition: 0.5s;
 }
 
-.strelka::before{
-    transform: rotate(142deg);
-    left: 6px;
-    top: 15px;
-    content: "";
-    position: absolute;
-    width: 15px;
-    height: 3px;
-    background: gold;
-}
 
-.strelka::after{
-    transform: rotate(40deg);
-    left: 16px;
-    top: 15px;
-    content: "";
-    position: absolute;
-    width: 15px;
-    height: 3px;
-    background: gold;
+.strelka .bx-up-arrow-alt{
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 22px;
 }
-
-.strelka:hover{
-   box-shadow: 0px 0px 10px 0px #2F89DC,
-   0px 0px 20px 0px #2F89DC,
-   0px 0px 40px 0px #2F89DC;
-}
-
 
 /*Бургер меню*/
 
@@ -109,7 +97,6 @@ body{
     -o-transition: 0.4s;
     transition: 0.4s;
 }
-
 
 .burger-menu_lines::before,
 .burger-menu_lines::after,
@@ -160,7 +147,7 @@ body{
 }
 
 .burger-menu_nav {
-    padding-top: 50px;
+    padding-top: 0px;
     position: fixed;
     top: 0;
     z-index: 100;
@@ -168,7 +155,7 @@ body{
     flex-flow: column;
     width: 100%;
     height: 100%;
-    background-color: white;
+    background-color: #2F89DC;
     /* background-image:linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url(../img/02.jpg); */
     /* background-size: cover; */
     overflow-y: auto;
@@ -192,19 +179,19 @@ body{
     z-index: 55;
     text-align: center;
     padding: 20px 35px;
-    top: 100px;
+    top: 102px;
     font-family: 'Roboto', sans-serif;
     font-size: 18px;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 5px;
     font-weight: 400;
-    color: black;
+    color: #ffffff;
     transition: 0.4s;
 }
 
 .burger-menu_link:hover {
-    color: #2F89DC;
+    color: gold;
 }
 
 .burger-menu_overlay {
@@ -222,9 +209,6 @@ body{
     background-color: rgba(0, 0, 0, 0.5);
 }
 
-
-
-
 a{
     text-decoration: none;
 }
@@ -237,10 +221,12 @@ a{
 .bx-search:hover{
     color: #2F89DC;
 }
+
 .bx-loader-circle{
     color: #2F89DC;
     font-size: 20px;
 }
+
 .bx-loader-circle:hover{
     color: #2F89DC;
 }
@@ -251,9 +237,9 @@ a{
     text-transform: uppercase;
     color: #2F89DC;
     letter-spacing: 1px;
-  }
+}
   
-  #search {
+#search{
     -webkit-box-align: center;
     align-items: center;
     background: #ffffff;
@@ -268,7 +254,7 @@ a{
     -webkit-transition: all 0.5s;
     transition: all 0.5s;
     width: 450px;
-  }
+}
 
   #search button,
   #search input {
@@ -280,75 +266,87 @@ a{
     color: inherit;
     font: inherit;
     outline: 0;
-  }
-  #search button {
+}
+
+#search button {
     cursor: pointer;
     padding: 0 0.25em;
-  }
-  #search input {
+}
+
+#search input{
     -webkit-box-flex: 1;
-            flex: 1;
-  }
-  #search input::-webkit-input-placeholder {
+    flex: 1;
+}
+
+#search input::-webkit-input-placeholder{
     color: #2F89DC;
-  }
-  #search input::-moz-placeholder {
+}
+
+#search input::-moz-placeholder{
     color: #2F89DC;
-  }
+}
+
   #search input:-ms-input-placeholder {
     color: #2F89DC;
-  }
-  #search input::-ms-input-placeholder {
+}
+
+#search input::-ms-input-placeholder{
     color: #2F89DC;
-  }
-  #search input::placeholder {
+}
+
+#search input::placeholder{
     color: #2F89DC;
-  }
-  #search .spinner {
+}
+
+#search .spinner{
     -webkit-animation: spinner 1s infinite linear;
     animation: spinner 1s infinite linear;
     display: none;
     padding: 0 0.25em;
-  }
+}
   
-  #search.loading button {
+#search.loading button{
     display: none;
-  }
-  #search.loading .spinner {
+}
+
+#search.loading .spinner{
     display: block;
-  }
+}
   
-  @-webkit-keyframes spinner {
-    0% {
-      -webkit-transform: rotate(0deg);
-              transform: rotate(0deg);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-              transform: rotate(360deg);
-    }
-  }
+@-webkit-keyframes spinner{
+0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+}
   
 @keyframes spinner {
 0% {
     -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
 }
 100% {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
 }
 }
+
 .codes{
     bottom: 5%;
     left: 5%;
     position: fixed;
 }
+
 .codes div {
     border: 2px solid gold;
     font-size: 20px;
     padding: 10px;
 }
+
 .codes div a{
     text-decoration: none;
     color: white;
@@ -365,6 +363,7 @@ a{
     /* background-color: #435597; */
     height: 70px;
 }
+
 header{
 	color: white;
 	display: flex;
@@ -377,10 +376,12 @@ header{
 .nav_link{
 	list-style: none;
 }
+
 .nav_link li{
 	display: inline-block;
 	padding: 0px 10px;
 }
+
 .nav_link li a{
     font-weight: 500;
     font-size: 17px;
@@ -389,20 +390,50 @@ header{
 	transition: all 0.3s ease;
 }
 
-
-.nav_link li a::before{
-    transition: 0.4s ease-in-out;
+.nav_link li:nth-child(1) a::before{
+    transition: 0.3s ease-in-out;
     content: "";
     position: absolute;
     background-color:gold;
     width: 0px;
-    height: 3px;
+    height: 2px;
     top:50px;
 }
-.nav_link li a:hover::before{
-    width: 35px;
+
+.nav_link li:nth-child(1):hover a::before{
+    width: 75px;
+}
+
+.nav_link li:nth-child(2) a::before{
+    transition: 0.3s ease-in-out;
+    content: "";
+    position: absolute;
+    background-color:gold;
+    width: 0px;
+    height: 2px;
+    top:50px;
+}
+
+.nav_link li:nth-child(2):hover a::before{
+    width: 58px;
  
 }
+
+.nav_link li:nth-child(3) a::before{
+    transition: 0.3s ease-in-out;
+    content: "";
+    position: absolute;
+    background-color:gold;
+    width: 0px;
+    height: 2px;
+    top:50px;
+}
+
+.nav_link li:nth-child(3):hover a::before{
+    width: 72px;
+ 
+}
+
 .nav_link li a:hover{
     text-shadow: 0px 1px 10px gold;
     color: gold;
@@ -422,7 +453,6 @@ i{
 i:hover{
     color: gold;
 }
-
 
 .pod_container{
     top: 70px;
@@ -446,6 +476,7 @@ i:hover{
     font-size: 17px;
     color: black;
 }
+
 .logo{
     margin-left: 5px;
     width: 100px;
@@ -471,6 +502,7 @@ i:hover{
     padding: 0px 70px;
     margin: 0 auto;
 }
+
 h4{
     border-top-left-radius: 26px;
     border-top: 6px solid rgb(17, 183, 224);
@@ -494,7 +526,6 @@ h4{
     width: 300px;
 }
 
-
 .katalog-text{
     overflow: hidden;
     z-index: 30000;
@@ -502,7 +533,6 @@ h4{
     top: -23px;
     padding:11px;
 }
-
 
 .katalog-text a{
     transition: 0.4s ease-in-out;
@@ -512,11 +542,11 @@ h4{
     color: white;
     padding: 10px 50px 50px 30px;
 }
+
 .katalog-text a:hover{
     text-shadow: 0px 0px 10px gold;
     color: gold;
 }
-
 
 .katalog-text a::before{
     transition: 0.4s ease-in-out;
@@ -527,7 +557,6 @@ h4{
     top:45px;
 
 }
-
 
 .katalog-text a::after{
     left: 75px;
@@ -541,12 +570,12 @@ h4{
     height: 2px;
     top: 37px;
 }
+
 .katalog-text a:hover::after{
     border-radius: 20px;
     margin-bottom: 0px;
     opacity: 1;
 }
-
 
 .katalog-text .text_href a:hover::after{
     border-radius: 0px;
@@ -554,6 +583,7 @@ h4{
     opacity: 0;
     background: none;
 }
+
 .bx-chevron-right{
     position: absolute;
     top: 0px;
@@ -571,6 +601,7 @@ label{
     transition: 0.3s ease-in-out;
     cursor: pointer;
 }
+
 #chek,
 #chek2,
 #chek3,
@@ -588,27 +619,35 @@ label{
     
     display: block;
 }
+
 #chek2:checked ~ .text_href{
     display: block;
 }
+
 #chek3:checked ~ .text_href{
     display: block;
 }
+
 #chek4:checked ~ .text_href{
     display: block;
 }
+
 #chek5:checked ~ .text_href{
     display: block;
 }
+
 #chek6:checked ~ .text_href{
     display: block;
 }
+
 #chek7:checked ~ .text_href{
     display: block;
 }
+
 #chek8:checked ~ .text_href{
     display: block;
 }
+
 #chek9:checked ~ .text_href{
     display: block;
 }
@@ -624,16 +663,15 @@ label{
     background-color: #2e82d1;
 }
 
-
 .text_href .wrap{
     font-size: 14px;
     color: white;
 }
+
 .text_href .wrap:hover{
     text-shadow:none;
     color: gold;
 }
-
 
 /*tovari*/
 
@@ -680,15 +718,11 @@ label{
     width: 100%;
     height: 100%;
     background: #2e82d1;
-    transition: 0.5s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
 .card:hover::before{
-
     background: #2e82d1;
-
 }
-
-
 
 .card .imgbx a{
     position: relative;
@@ -698,6 +732,7 @@ label{
     padding-top: 30px;
     z-index: 2260;
 }
+
 .card .imgbx img{
     max-width: 50%;
     transition: 0.4s ease-in-out;
@@ -716,15 +751,14 @@ label{
     opacity: 0.3;
     transition: 0.5s ease-in-out;
 }
+
 .card .imgbx:hover::before{
     left: 100%;
 }
 
-
 /* .card:hover .imgbx img{
     max-width: 45%;
 } */
-
 
 .card .contentbx{
     position: relative;
@@ -760,6 +794,7 @@ h3 a:hover{
     font-weight: 500;
     letter-spacing: 3px;
 }
+
 .card .contentbx .buy{
     overflow: hidden;
     font-family: Georgia, 'Times New Roman', Times, serif;
@@ -780,11 +815,13 @@ h3 a:hover{
     transition: 0.3s;
     letter-spacing: 1px;
 }
+
 .buy:hover{
     text-shadow: 0px 0px 10px white;
     box-shadow: 0px 0px 10px 0px #2e82d1;
     top: 0px;
 }
+
 .card .contentbx .buy::before{
     content: "";
     position: absolute;
@@ -795,8 +832,9 @@ h3 a:hover{
     transform: rotate(130deg);
     background: rgb(241, 241, 241);
     opacity: 0.5;
-    transition: 0.4s ease-in-out;
+    transition: 0.3s ease-in-out;
 }
+
 .card .contentbx .buy:hover::before{
     left: 100%;
 }
@@ -805,30 +843,34 @@ h3 a:hover{
     color: rgb(255, 255, 255);
 }
 
-
 /*slider*/
 
 .slider{
     position:relative
 }
+
 .slider__container{
     
     overflow:hidden
 }
+
 .slider__items{
     
     margin-top: 0px;
     display:flex;
     transition:transform .5s ease
 }
+
 .slider_disable-transition{
     transition:none
 }
+
 .slider__item{
     flex:0 0 100%;
     max-width:100%;
     user-select:none
 }
+
 .slider__control{
     margin-top: 70px;
     position:absolute;
@@ -843,9 +885,11 @@ h3 a:hover{
     transform:translateY(-50%);
     background:rgba(0,0,0,.2)
 }
+
 .slider__control_hide{
     display:none
 }
+
 .slider__control[data-slide=prev]{left:0}
 .slider__control[data-slide=next]{right:0}
 .slider__control:focus,.slider__control:hover{
@@ -854,6 +898,7 @@ h3 a:hover{
     outline:0;
     background:rgba(0,0,0,.3)
 }
+
 .slider__control::before{
     content:'';
     display:inline-block;
@@ -862,12 +907,15 @@ h3 a:hover{
     background:transparent no-repeat center center;
     background-size:100% 100%
 }
+
 .slider__control[data-slide=prev]::before{
     background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E")
 }
+
 .slider__control[data-slide=next]::before{
     background-image:url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E")
 }
+
 .slider__indicators{
     position:absolute;
     right:0;
@@ -883,6 +931,7 @@ h3 a:hover{
     margin-top:0;
     margin-bottom:0;
 }
+
 .slider__indicators li{
     box-sizing:content-box;
     flex:0 1 auto;
@@ -897,10 +946,10 @@ h3 a:hover{
     border-top:15px solid transparent;
     border-bottom:15px solid transparent
 }
+
 .slider__indicators li.active{
     background-color:gold;
 }
-
 
 /*Слайдер*/
 
@@ -927,7 +976,6 @@ h3 a:hover{
     height: 447px;
     position: relative;
 }
-
 
 .slider__item:nth-child(1) {
     background: url(../img/corsair-far-cry-6-web.jpg);
@@ -965,401 +1013,33 @@ h3 a:hover{
 }
 
 .block-mishi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
     position: relative;
     transition: 0.5s ease-in-out;
-    background:linear-gradient(rgba(0,0,0,0.80), rgba(0,0,0,0.80)), url(../img/478ef618f0f42236d2509a7706ebf508_1499x999_w0_100.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 250px;
+    background-color: #2F89DC;
 }
 
-.block-mishi h3 a{
+.block-mishi h3{
+    -webkit-text-stroke: 2px #1687f1;
+    letter-spacing: 1px;
     transition: 0.4s ease-in-out;
     color: white;
-    font-size: 35px;
+    font-size: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 250px;
 }
-
-.block-mishi h3 a::before{
-    transition: 0.4s ease-in-out;
-    content: "";
-    position: absolute;
-    background-color: gold;
-    width: 0px;
-    height: 3px;
-    top: 150px;
-}
-
-.block-mishi h3 a:hover::before{
-    transition-delay: 0.3s;
-    background-color: gold;
-    width: 277px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-}
-
-
-.block-mishi h3:hover a{
-    transition-delay: 0.3s;
-    text-shadow: 0px 0px 20px gold;
-    color: gold;
-}
-
-
-/*Блок 2*/
-
-.block-mishi2{
-    position: relative;
-    transition: 0.5s ease-in-out;
-    background:linear-gradient(rgba(0,0,0,0.80), rgba(0,0,0,0.80)), url(../img/6041072493.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 250px;
-}
-
-.block-mishi2 h3 a{
-    transition: 0.4s ease-in-out;
-    color: white;
-    font-size: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 250px;
-}
-
-.block-mishi2 h3 a::before{
-    transition: 0.4s ease-in-out;
-    content: "";
-    position: absolute;
-    background-color: gold;
-    width: 0px;
-    height: 3px;
-    top: 150px;
-}
-
-.block-mishi2 h3 a:hover::before{
-    transition-delay: 0.3s;
-    background-color: gold;
-    width: 370px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-}
-
-
-.block-mishi2 h3:hover a{
-    transition-delay: 0.3s;
-    text-shadow: 0px 0px 20px gold;
-    color: gold;
-}
-
-
-/*Блок 3*/
-
-.block-mishi3{
-    position: relative;
-    transition: 0.5s ease-in-out;
-    background:linear-gradient(rgba(0,0,0,0.80), rgba(0,0,0,0.80)), url(../img/razer_blackshark_v2_usb_mic_enhancer_headphones-4.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 250px;
-}
-
-.block-mishi3 h3 a{
-    transition: 0.4s ease-in-out;
-    color: white;
-    font-size: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 250px;
-}
-
-.block-mishi3 h3 a::before{
-    transition: 0.4s ease-in-out;
-    content: "";
-    position: absolute;
-    background-color: gold;
-    width: 0px;
-    height: 3px;
-    top: 150px;
-}
-
-.block-mishi3 h3 a:hover::before{
-    transition-delay: 0.3s;
-    background-color: gold;
-    width: 340px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-}
-
-
-.block-mishi3 h3:hover a{
-    transition-delay: 0.3s;
-    text-shadow: 0px 0px 20px gold;
-    color: gold;
-}
-
-
-/*Блок 4*/
-
-.block-mishi4{
-    position: relative;
-    transition: 0.5s ease-in-out;
-    background:linear-gradient(rgba(0,0,0,0.80), rgba(0,0,0,0.80)), url(../img/c309e4a22c6c7693f3d34cf771eee666.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 250px;
-}
-
-.block-mishi4 h3 a{
-    transition: 0.4s ease-in-out;
-    color: white;
-    font-size: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 250px;
-}
-
-.block-mishi4 h3 a::before{
-    transition: 0.4s ease-in-out;
-    content: "";
-    position: absolute;
-    background-color: gold;
-    width: 0px;
-    height: 3px;
-    top: 150px;
-}
-
-.block-mishi4 h3 a:hover::before{
-    transition-delay: 0.3s;
-    background-color: gold;
-    width: 345px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-}
-
-
-.block-mishi4 h3:hover a{
-    transition-delay: 0.3s;
-    text-shadow: 0px 0px 20px gold;
-    color: gold;
-}
-
-/*Блок 5*/
-
-.block-mishi5{
-    position: relative;
-    transition: 0.5s ease-in-out;
-    background:linear-gradient(rgba(0,0,0,0.80), rgba(0,0,0,0.80)), url(../img/5a7c5d315eb0b70b9d0f2a1f1f09a96c42ffb5a3_1024_1024.jpeg);
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 250px;
-}
-
-.block-mishi5 h3 a{
-    transition: 0.4s ease-in-out;
-    color: white;
-    font-size: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 250px;
-}
-
-.block-mishi5 h3 a::before{
-    transition: 0.4s ease-in-out;
-    content: "";
-    position: absolute;
-    background-color: gold;
-    width: 0px;
-    height: 3px;
-    top: 150px;
-}
-
-.block-mishi5 h3 a:hover::before{
-    transition-delay: 0.3s;
-    background-color: gold;
-    width: 340px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-}
-
-
-.block-mishi5 h3:hover a{
-    transition-delay: 0.3s;
-    text-shadow: 0px 0px 20px gold;
-    color: gold;
-}
-
-
-/*Блок 6*/
-
-.block-mishi6{
-    position: relative;
-    transition: 0.5s ease-in-out;
-    background:linear-gradient(rgba(0,0,0,0.80), rgba(0,0,0,0.80)), url(../img/856838104.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 250px;
-}
-
-.block-mishi6 h3 a{
-    transition: 0.4s ease-in-out;
-    color: white;
-    font-size: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 250px;
-}
-
-.block-mishi6 h3 a::before{
-    transition: 0.4s ease-in-out;
-    content: "";
-    position: absolute;
-    background-color: gold;
-    width: 0px;
-    height: 3px;
-    top: 150px;
-}
-
-.block-mishi6 h3 a:hover::before{
-    transition-delay: 0.3s;
-    background-color: gold;
-    width: 220px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-}
-
-
-.block-mishi6 h3:hover a{
-    transition-delay: 0.3s;
-    text-shadow: 0px 0px 20px gold;
-    color: gold;
-}
-
-
-/*Блок 7*/
-
-.block-mishi7{
-    position: relative;
-    transition: 0.5s ease-in-out;
-    background:linear-gradient(rgba(0,0,0,0.80), rgba(0,0,0,0.80)), url(../img/LIK_01.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 250px;
-}
-
-.block-mishi7 h3 a{
-    transition: 0.4s ease-in-out;
-    color: white;
-    font-size: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 250px;
-}
-
-.block-mishi7 h3 a::before{
-    transition: 0.4s ease-in-out;
-    content: "";
-    position: absolute;
-    background-color: gold;
-    width: 0px;
-    height: 3px;
-    top: 150px;
-}
-
-.block-mishi7 h3 a:hover::before{
-    transition-delay: 0.3s;
-    background-color: gold;
-    width: 370px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-}
-
-
-.block-mishi7 h3:hover a{
-    transition-delay: 0.3s;
-    text-shadow: 0px 0px 20px gold;
-    color: gold;
-}
-
-
-
-
-/*Блок 8*/
-
-.block-mishi8{
-    position: relative;
-    transition: 0.5s ease-in-out;
-    background:linear-gradient(rgba(0,0,0,0.80), rgba(0,0,0,0.80)), url(../img/q93_8788d03b854f553ef6f2c2fcfae203e73448eb6d20b6b4583910f64d164b2a86.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 250px;
-}
-
-.block-mishi8 h3 a{
-    transition: 0.4s ease-in-out;
-    color: white;
-    font-size: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    height: 250px;
-}
-
-.block-mishi8 h3 a::before{
-    transition: 0.4s ease-in-out;
-    content: "";
-    position: absolute;
-    background-color: gold;
-    width: 0px;
-    height: 3px;
-    top: 150px;
-}
-
-.block-mishi8 h3 a:hover::before{
-    transition-delay: 0.3s;
-    background-color: gold;
-    width: 355px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-}
-
-
-.block-mishi8 h3:hover a{
-    transition-delay: 0.3s;
-    text-shadow: 0px 0px 20px gold;
-    color: gold;
-}
-
 
 
 /*footer*/
 
 footer{
-    background-color: rgb(238, 238, 238);
+    color: white;
+    background-color: #2F89DC;
     width: 100%;
 
 }
@@ -1384,7 +1064,6 @@ footer{
     letter-spacing: 2px;
 }
 
-
 .pokup p{
     line-height: 30px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -1394,11 +1073,11 @@ footer{
 
 .pokup a{
     transition: 0.3s;
-    color: black;
+    color: white;
 }
 
 .pokup a:hover{
-    color: rgb(248, 97, 9);
+    color: gold;
 }
 
 .info{
@@ -1411,7 +1090,6 @@ footer{
     letter-spacing: 2px;
 }
 
-
 .info p{
     line-height: 30px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -1421,12 +1099,15 @@ footer{
 
 .info a{
     transition: 0.3s;
-    color: black;
+    color: white;
 }
+
 .info a:hover{
-    color: rgb(248, 97, 9);
+    color: gold;
 }
+
 .contact p{
+    color: white;
     line-height: 30px;
     letter-spacing: 2px;
     font-size: 18px;
@@ -1434,39 +1115,55 @@ footer{
 
 }
 
+.contact p a{
+    transition: 0.2s;
+    color: white;
+}
+
+.contact p a:hover{
+    color: gold;
+}
 
 .icons2{
     font-size: 40px;
     display: flex;
 }
+
 .bxl-vk{
-    color: black;
+    color: white;
 }
+
 .bxl-vk:hover{
     color: rgb(23, 83, 212);
 }
+
 .bxl-instagram-alt{
-    color: black;
+    color: white;
 }
+
 .bxl-instagram-alt:hover{
     color: rgb(107, 21, 107);
 }
+
 .bxl-telegram{
-    color: black;
+    color: white;
 }
+
 .bxl-telegram:hover{
     color: rgb(3, 137, 247);
 }
+
 .bxl-facebook{
-    color: black;
+    color: white;
 }
+
 .bxl-facebook:hover{
     color: rgb(17, 54, 156);
 }
 
 .pod_footer p{
     line-height: 38px;
-    color: gray;
+    color: white;
     position: relative;
     top: -30px;
     text-align: center;
@@ -1476,21 +1173,23 @@ footer{
 }
 
 .pod_footer a{
-    color: gray;
+    transition: 0.2s;
+    color: white;
     font-size: 14px;
 }
+
 .pod_footer a:hover{
-    color: rgb(0, 122, 153);
+    color: gold;
 }
-
-
 
 
 @media screen and (max-width:1185px){
+
 .wrapper{
     padding: 0px 50px;
     margin: 0 auto;
 }
+
 .slid {
     position: absolute;
     border-radius: 20px;
@@ -1509,6 +1208,7 @@ footer{
 
 
 @media screen and (max-width:1068px){
+
 header{
     color: white;
     display: flex;
@@ -1521,10 +1221,14 @@ header{
 
 @media screen and (max-width:992px){
 
+.icon3{
+    display: none;
+}
 
 .nav_link li{
     display: none;
 }
+
 .burger-menu{
     display: block;
 }
@@ -1538,13 +1242,13 @@ header{
     width: 55%;
 }
 
-
 /*Каталог*/
 
 .wrapper{
     padding: 0px 0px;
     margin: 0 auto;
 }
+
 h4{
     border-top: 6px solid rgb(17, 183, 224);
     text-transform: uppercase;
@@ -1570,7 +1274,6 @@ h4{
     height: 80px;
 }
 
-
 .katalog:hover .katalog-text{
     height: 100%;
     display: block;
@@ -1585,7 +1288,6 @@ h4{
     padding:11px;
 }
 
-
 .katalog-text a{
     transition: 0.4s ease-in-out;
     font-weight: 500;
@@ -1594,11 +1296,11 @@ h4{
     color: white;
     padding: 10px 50px 50px 30px;
 }
+
 .katalog-text a:hover{
     text-shadow: 0px 0px 10px gold;
     color: gold;
 }
-
 
 .katalog-text a::before{
     transition: 0.4s ease-in-out;
@@ -1609,7 +1311,6 @@ h4{
     top:45px;
 
 }
-
 
 .katalog-text a::after{
     left: 75px;
@@ -1623,6 +1324,7 @@ h4{
     height: 2px;
     top: 37px;
 }
+
 .katalog-text a:hover::after{
     border-radius: 20px;
     margin-bottom: 0px;
@@ -1647,19 +1349,15 @@ h4{
     background-color: #2e82d1;
 }
 
-
 .text_href .wrap{
     font-size: 14px;
     color: white;
 }
+
 .text_href .wrap:hover{
     text-shadow:none;
     color: gold;
 }
-
-
-
-
 
 .slid {
     position: absolute;
@@ -1678,126 +1376,57 @@ h4{
 
 .container-mishi{
     overflow: hidden;
-    margin-top: 453px;
+    margin-top: 472px;
 }
-
-.container-mishi2{
-    overflow: hidden;
-    margin-top: 0px;
-}
-
-.container-mishi3{
-    overflow: hidden;
-    margin-top: 0px;
-}
-
-.container-mishi4{
-    overflow: hidden;
-    margin-top: 0px;
-}
-
-.container-mishi5{
-    overflow: hidden;
-    margin-top: 0px;
-}
-
-.container-mishi6{
-    overflow: hidden;
-    margin-top: 0px;
-}
-
-.container-mishi7{
-    overflow: hidden;
-    margin-top: 0px;
-}
-
-.container-mishi8{
-    overflow: hidden;
-    margin-top: 0px;
-}
-
-.container-mishi9{
-    overflow: hidden;
-    margin-top: 0px;
-} 
 
 .block-mishi{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
     position: relative;
     transition: 0.5s ease-in-out;
-    background:linear-gradient(rgba(0,0,0,0.80), rgba(0,0,0,0.80)), url(../img/478ef618f0f42236d2509a7706ebf508_1499x999_w0_100.jpg);
-    background-size: cover;
-    background-position: center;
-    width: 100%;
-    height: 250px;
+    background-color: #2F89DC;
 }
 
-.block-mishi h3 a{
+.block-mishi h3{
+    -webkit-text-stroke: 2px #1687f1;
+    letter-spacing: 1px;
     transition: 0.4s ease-in-out;
     color: white;
-    font-size: 35px;
+    font-size: 45px;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    height: 250px;
+}
 }
 
-.block-mishi h3 a::before{
-    transition: 0.4s ease-in-out;
-    content: "";
-    position: absolute;
-    background-color: gold;
-    width: 0px;
-    height: 3px;
-    top: 150px;
-}
-
-.block-mishi h3 a:hover::before{
-    transition-delay: 0.3s;
-    background-color: gold;
-    width: 277px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-}
-
-
-.block-mishi h3:hover a{
-    transition-delay: 0.3s;
-    text-shadow: 0px 0px 20px gold;
-    color: gold;
-}
-
-
-}
 @media screen and (max-width: 977px){
-.icon3{
-    display: block;
-}
-.icon3{
-    margin-top: 110px;
-    font-size: 40px;
-    display: flex;
-    justify-content: center;
-}
+
 #burger-user{
-    color: #2e82d1;
+    color: #ffffff;
 }
+
 #burger-user:hover{
     color: gold;
 }
+
 #burger-cart{
-    color: #2e82d1;
+    color: #ffffff;
 }
+
 #burger-cart:hover{
     color: gold;
 }
 }
 
 @media screen and (max-width: 920px){
-    /*footer*/
+
+/*footer*/
 
 footer{
-    background-color: rgb(238, 238, 238);
+    background-color: #2F89DC;
     width: 100%;
 
 }
@@ -1822,7 +1451,6 @@ footer{
     letter-spacing: 2px;
 }
 
-
 .pokup p{
     line-height: 30px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -1831,7 +1459,7 @@ footer{
 }
 
 .pokup a{
-    color: black;
+    color: white;
 }
 
 .info{
@@ -1844,7 +1472,6 @@ footer{
     letter-spacing: 2px;
 }
 
-
 .info p{
     line-height: 30px;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -1853,7 +1480,7 @@ footer{
 }
 
 .info a{
-    color: black;
+    color:  white;
 }
 
 .contact p{
@@ -1864,10 +1491,9 @@ footer{
 
 }
 
-
 .pod_footer p{
     line-height: 40px;
-    color: gray;
+    color: white;
     position: relative;
     top: -30px;
     text-align: center;
@@ -1877,13 +1503,12 @@ footer{
 }
 
 .pod_footer a{
-    color: gray;
+    color: white;
     font-size: 14px;
 }
 }
 
 @media screen and (max-width:830px){
-
 
 .tovari{
     margin-top: 0px;
@@ -1903,6 +1528,7 @@ footer{
     padding: 0px 0px;
     margin: 0 auto;
 }
+
 h4{
     border-top: 6px solid rgb(17, 183, 224);
     text-transform: uppercase;
@@ -1963,11 +1589,11 @@ h4{
     color: white;
     padding: 10px 50px 50px 30px;
 }
+
 .katalog-text a:hover{
     text-shadow: 0px 0px 10px gold;
     color: gold;
 }
-
 
 .katalog-text a::before{
     transition: 0.4s ease-in-out;
@@ -1978,7 +1604,6 @@ h4{
     top:45px;
 
 }
-
 
 .katalog-text a::after{
     left: 75px;
@@ -1992,6 +1617,7 @@ h4{
     height: 2px;
     top: 37px;
 }
+
 .katalog-text a:hover::after{
     border-radius: 20px;
     margin-bottom: 0px;
@@ -2005,15 +1631,16 @@ h4{
     background: none;
 }
 
-
 .text_href .wrap{
     font-size: 14px;
     color: white;
 }
+
 .text_href .wrap:hover{
     text-shadow:none;
     color: gold;
 }
+
 .slid {
     position: absolute;
     border-radius: 20px;
@@ -2030,13 +1657,12 @@ h4{
 }
 }
 
-
-
 @media screen and (max-width: 787px){
-    /*footer*/
+
+/*footer*/
 
 footer{
-    background-color: rgb(238, 238, 238);
+    background-color: #2F89DC;
     width: 100%;
 }
 }
@@ -2085,6 +1711,7 @@ footer{
     padding-top: 30px;
     z-index: 2260;
 }
+
 .card .imgbx img{
     max-width: 50%;
     transition: 0.4s ease-in-out;
@@ -2119,11 +1746,6 @@ footer{
     letter-spacing: 1px;
 }
 
-/* .card:hover .imgbx img{
-    max-width: 45%;
-} */
-
-
 .card .contentbx{
     position: relative;
     padding: 0px;
@@ -2143,13 +1765,13 @@ footer{
 
 }
 }
+
 @media screen and (max-width: 745px){
+
 .icon{
     padding-right: 0px;
     font-size: 35px;
 }
-
-
 
 .pod_container{
     box-shadow: 0px 0px 12px gray;
@@ -2175,6 +1797,7 @@ footer{
     font-size: 17px;
     color: black;
 }
+
 .logo{
     margin-left: 0px;
     width: 100px;
@@ -2221,7 +1844,7 @@ h4{
 
 .container-mishi{
     overflow: hidden;
-    margin-top: 495px;
+    margin-top: 516px;
 }
 
 .slid {
@@ -2235,17 +1858,14 @@ h4{
 
 @media screen and (max-width: 700px){
 
-
 .katalog{
-
     top: 66px;
 }
 
 .container-mishi{
     overflow: hidden;
-    margin-top: 400px;
+    margin-top: 420px;
 }
-
 
 i{
     margin: 5px;
@@ -2279,6 +1899,7 @@ header{
     height: 350px;
     position: relative;
 }
+
 .tovari{
     margin-top: 0px;
 }
@@ -2286,6 +1907,7 @@ header{
 
 
 @media screen and (max-width: 600px){
+
 .content{
     flex-wrap: wrap;
     display: flex;
@@ -2294,18 +1916,22 @@ header{
     padding: 0px 0%;
     height: 100px;
 }
+
 #search {
     width: 250px;
 }
+
 #text{
     position: relative;
     text-align: center;
     font-size: 16px;
     color: black;
 }
+
 .katalog{
     top: 66px;
 }
+
 .slid {
     position: absolute;
     border-radius: 20px;
@@ -2316,6 +1942,7 @@ header{
 }
 
 @media screen and (max-width: 540px){
+
 .slid {
     position: absolute;
     border-radius: 20px;
@@ -2330,18 +1957,41 @@ header{
     height: 290px;
     position: relative;
 }
+
 .tovari{
     margin-top: 0px;
 }
 
 .container-mishi{
     overflow: hidden;
-    margin-top: 340px;
+    margin-top: 362px;
 }
 }
 
 
 @media screen and (max-width: 491px){
+
+/*strelka*/
+
+.strelka{
+    position: fixed;
+    z-index: 40;
+    right: 10px;
+    bottom: 20px;
+    background: #2F89DC;
+    width: 35px;
+    height: 35px;
+    transition: 0.5s;
+}
+
+.strelka .bx-up-arrow-alt{
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 22px;
+}
+    
 .content{
     flex-wrap: wrap;
     display: flex;
@@ -2350,12 +2000,15 @@ header{
     padding: 0px 0%;
     height: 100px;
 }
+
 .icon{
     display: none;
 }
+
 .icon3{
     display: block;
 }
+
 .icon3{
     margin-top: 110px;
     font-size: 40px;
@@ -2363,12 +2016,11 @@ header{
     display: flex;
     justify-content: center;
 }
-i{
-    color: black;
-}
+
 #search {
     width: 210px;
 }
+
 #text{
     padding-left: 30px;
     padding-right: 30px;
@@ -2378,13 +2030,14 @@ i{
     font-size: 16px;
     color: black;
 }
+
 .katalog{
    top:170px;
 }
 
 .container-mishi{
     overflow: hidden;
-    margin-top: 445px;
+    margin-top: 465px;
 }
 
 .telefon{
@@ -2392,11 +2045,13 @@ i{
     position: relative;
     top: -20px;
 }
+
 .telefon a{
     line-height: 20px;
     font-size: 16px;
 
 }
+
 .slid {
     position: absolute;
     border-radius: 20px;
@@ -2406,10 +2061,9 @@ i{
 }
 }
 
-
 @media screen and (max-width: 484px){
-    /*footer*/
 
+/*footer*/
 
 .footer{
     padding-left: 10px;
@@ -2422,15 +2076,22 @@ i{
     margin-left: 0px;
 }
 
-
 .pod_footer p{
     line-height: 30px;
 }
 }
 
-
+@media screen and (max-width: 479px){
+.card{
+    position: relative;
+    margin: 10px;
+    width: 180px;
+    height: 320px;
+}
+}
 
 @media screen and (max-width: 430px){
+
 .slid {
     top: 380px;
     left: -20px;
@@ -2440,12 +2101,15 @@ i{
 .slider__item {
     height: 200px;
 }
+
 .tovari{
     margin-top: 0px;
 }
+
 .container-mishi{
     overflow: hidden;
-    margin-top: 350px;
+    margin-top: 370px;
+}
 }
 
-}
+
