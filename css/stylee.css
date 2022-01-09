@@ -66,11 +66,15 @@ body{
     background: #2F89DC;
     width: 35px;
     height: 35px;
-    transition: 0.5s;
+    transition: 0.4s;
 }
 
+.strelka:hover{
+    opacity: 0.8;
+}
 
 .strelka .bx-up-arrow-alt{
+    color: white;
     font-size: 30px;
     display: flex;
     justify-content: center;
@@ -703,12 +707,45 @@ label{
     margin: 10px;
     width: 280px;
     height: 410px;
-    transition: 0.4s ease-out;
+    transition: 0.3s;
     box-shadow: 0px 0px 0px 1px #2e82d1;
 }
 
 .card:hover{
-    box-shadow: 0px 0px 0px 3px #2e82d1;
+    box-shadow: 0px 0px 10px 2px #2e82d1;
+}
+
+.novinka::before{
+    font-size: 14px;
+    content: "Новинка";
+    position: absolute;
+    background-color: #52a5f3;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 70px;
+    height: 32px;
+    text-align: center;
+    box-shadow:  0px 0px 10px 0px #52a5f3;
+}
+
+.skidka::before{
+    content: "Скидка";
+    position: absolute;
+    background-color: #52a5f3;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    width: 70px;
+    height: 32px;
+    text-align: center;
+    box-shadow:  0px 0px 10px 0px #52a5f3;
 }
 
 .card::before{
@@ -720,6 +757,7 @@ label{
     background: #2e82d1;
     transition: 0.3s ease-in-out;
 }
+
 .card:hover::before{
     background: #2e82d1;
 }
@@ -736,24 +774,6 @@ label{
 .card .imgbx img{
     max-width: 50%;
     transition: 0.4s ease-in-out;
-
-}
-
-.card .imgbx::before{
-    content: "";
-    position: absolute;
-    top: 120px;
-    left: -350px;
-    width: 400px;
-    height:20px;
-    transform: rotate(120deg);
-    background: rgb(241, 241, 241);
-    opacity: 0.3;
-    transition: 0.5s ease-in-out;
-}
-
-.card .imgbx:hover::before{
-    left: 100%;
 }
 
 /* .card:hover .imgbx img{
@@ -772,7 +792,7 @@ label{
 
 .card .contentbx h3{
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 13px;
     color: black;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -789,7 +809,9 @@ h3 a:hover{
 }
 
 .card .contentbx .price{
-    font-size: 24px;
+    position: relative;
+    top: 5px;
+    font-size: 18px;
     color: #2e82d1;
     font-weight: 500;
     letter-spacing: 3px;
@@ -807,7 +829,7 @@ h3 a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 20px;
+    top: 35px;
     color: white;
     text-decoration: none;
     background: #2e82d1;
@@ -825,19 +847,19 @@ h3 a:hover{
 .card .contentbx .buy::before{
     content: "";
     position: absolute;
-    top: 0;
-    left: -55px;
-    width: 80px;
-    height:15px;
-    transform: rotate(130deg);
-    background: rgb(241, 241, 241);
-    opacity: 0.5;
+    top: 0px;
+    left: -10px;
+    width: 124px;
+    height:100%;
+    transform: skew(-23deg);
+    background:linear-gradient(to right, #2e82d1,rgb(241, 241, 241)) ;
+    opacity: 0.3;
     transition: 0.3s ease-in-out;
 }
 
-.card .contentbx .buy:hover::before{
+/* .card .contentbx .buy:hover::before{
     left: 100%;
-}
+} */
 
 .card .contentbx .buy:hover{
     color: rgb(255, 255, 255);
@@ -1010,6 +1032,11 @@ h3 a:hover{
 .container-mishi{
     overflow: hidden;
     margin-top: 130px;
+}
+
+.container-mishi2{
+    overflow: hidden;
+    margin-top: 0px;
 }
 
 .block-mishi{
@@ -1737,7 +1764,7 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    top: 10px;
+    top: 26px;
     color: white;
     text-decoration: none;
     background: #2e82d1;
@@ -2082,11 +2109,40 @@ header{
 }
 
 @media screen and (max-width: 479px){
+
 .card{
     position: relative;
     margin: 10px;
     width: 180px;
     height: 320px;
+}
+.card .imgbx img{
+    max-width: 60%;
+    transition: 0.4s ease-in-out;
+
+}
+.card .contentbx .buy{
+    font-size: 14px;
+    position: relative;
+    z-index: 105;
+    width: 240px;
+    height: 35px;
+    top: 15px;
+}
+.card .contentbx h3{
+    text-align: center;
+    margin-top: 0px;
+    font-size: 11px;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+
+}
+.card .contentbx .price{
+    font-size: 19px;
+}
+.card .contentbx{
+    padding: 0px 1px;
 }
 }
 
@@ -2109,6 +2165,16 @@ header{
 .container-mishi{
     overflow: hidden;
     margin-top: 370px;
+}
+}
+
+@media screen and (max-width: 399px){
+    
+.card{
+    position: relative;
+    margin: 3px;
+    width: 180px;
+    height: 320px;
 }
 }
 
